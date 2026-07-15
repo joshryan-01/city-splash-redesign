@@ -254,11 +254,11 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .logo-link { display: flex; align-items: center; }
-.logo-img { height: 44px; width: auto; }
+.logo-img { height: 32px; width: auto; }
 
 .main-nav > ul {
   display: flex;
@@ -351,8 +351,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 
 .header-actions { display: flex; align-items: center; gap: 16px; }
 .header-cta {
-  padding: 24px 57px;
-  font-size: 1.6rem;
+  padding: 12px 32px;
+  font-size: 1.05rem;
   background: var(--cs-yellow-dark);
   border-color: var(--cs-yellow-dark);
   color: var(--cs-black);
@@ -394,7 +394,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    ========================================================================== */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 82svh;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -415,8 +415,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .hero-inner {
   position: relative;
   color: var(--cs-white);
-  padding-top: 120px;
-  padding-bottom: clamp(40px, 6vw, 72px);
+  padding-top: 80px;
+  padding-bottom: clamp(24px, 4vw, 40px);
   width: 100%;
 }
 .eyebrow {
@@ -478,7 +478,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .hero-tagline {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   max-width: 640px;
-  margin: 12px 0 20px;
+  margin: 8px 0 10px;
   font-weight: 500;
 }
 .hero-meta {
@@ -487,14 +487,14 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   gap: 8px;
   font-weight: 600;
   color: var(--cs-white);
-  margin: 0 0 28px;
+  margin: 0 0 16px;
 }
 .hero-meta span[aria-hidden] { color: var(--cs-yellow); }
 
 .countdown {
   display: flex;
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 18px;
 }
 .countdown-unit {
   background: rgba(255,255,255,0.08);
@@ -799,30 +799,6 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-}
-
-/* ==========================================================================
-   Section teaser (moved-to-own-page sections: Line-up, Travel, FAQs)
-   ========================================================================== */
-.section-teaser {
-  text-align: center;
-  border-top: 3px solid var(--cs-black);
-  border-bottom: 3px solid var(--cs-black);
-}
-.section-teaser .container { max-width: 640px; }
-.section-teaser p { color: var(--cs-charcoal); margin-bottom: 20px; }
-
-/* ==========================================================================
-   Partners
-   ========================================================================== */
-.partners { background: var(--cs-yellow); text-align: center; }
-.partners .section-eyebrow { color: var(--cs-black); }
-.partners-line {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  text-transform: uppercase;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 /* ==========================================================================
