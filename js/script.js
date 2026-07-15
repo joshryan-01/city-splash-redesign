@@ -192,43 +192,6 @@ setInterval(updateCountdown, 1000);
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (!prefersReducedMotion) {
-  const heroTitle = document.querySelector('.hero-title');
-
-  if (heroTitle) {
-    const text = heroTitle.textContent;
-    heroTitle.setAttribute('aria-label', text);
-    heroTitle.textContent = '';
-
-    const letters = [...text].map((ch, i) => {
-      const span = document.createElement('span');
-      span.className = 'letter drip-in';
-      span.style.setProperty('--i', i);
-      span.textContent = ch === ' ' ? ' ' : ch;
-      span.setAttribute('aria-hidden', 'true');
-      heroTitle.appendChild(span);
-      return span;
-    });
-
-    // Drop the one-off entrance class once it's finished so it doesn't replay.
-    letters.forEach((span) => {
-      span.addEventListener('animationend', () => span.classList.remove('drip-in'), { once: true });
-    });
-
-    // Playful wave ripples through the letters on hover, re-triggerable each time.
-    heroTitle.addEventListener('mouseenter', () => {
-      letters.forEach((span) => {
-        span.classList.remove('waving');
-        void span.offsetWidth;
-        span.classList.add('waving');
-      });
-    });
-    letters.forEach((span) => {
-      span.addEventListener('animationend', (e) => {
-        if (e.animationName === 'letterWave') span.classList.remove('waving');
-      });
-    });
-  }
-
   const revealEls = document.querySelectorAll(
     'section h2, .pillar, .ticket-card, .headliner-card, .sponsor-card, .cohort-card, .product-card'
   );

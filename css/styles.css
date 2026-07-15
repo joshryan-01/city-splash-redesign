@@ -131,8 +131,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .btn-outline:hover { background: var(--cs-black); color: var(--cs-white); }
 .btn-large {
-  padding: 24px 56px;
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  padding: 32px 76px;
+  font-size: clamp(1.5rem, 3.4vw, 1.9rem);
 }
 .btn-white {
   background: var(--cs-white);
@@ -246,7 +246,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   position: sticky;
   top: 0;
   z-index: 500;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--cs-yellow);
   backdrop-filter: blur(8px);
   border-bottom: 3px solid var(--cs-black);
 }
@@ -350,7 +350,14 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 
 .header-actions { display: flex; align-items: center; gap: 16px; }
-.header-cta { padding: 16px 38px; font-size: 1.05rem; }
+.header-cta {
+  padding: 24px 57px;
+  font-size: 1.6rem;
+  background: var(--cs-yellow-dark);
+  border-color: var(--cs-yellow-dark);
+  color: var(--cs-black);
+}
+.header-cta:hover { background: #B8952E; border-color: #B8952E; }
 
 .nav-toggle {
   display: none;
@@ -415,7 +422,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .eyebrow {
   font-family: var(--font-display);
   letter-spacing: -0.01em;
-  font-size: 0.9rem;
+  font-size: 1.6rem;
   margin: 0 0 8px;
   display: inline-block;
   color: var(--cs-yellow);
@@ -793,6 +800,17 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+/* ==========================================================================
+   Section teaser (moved-to-own-page sections: Line-up, Travel, FAQs)
+   ========================================================================== */
+.section-teaser {
+  text-align: center;
+  border-top: 3px solid var(--cs-black);
+  border-bottom: 3px solid var(--cs-black);
+}
+.section-teaser .container { max-width: 640px; }
+.section-teaser p { color: var(--cs-charcoal); margin-bottom: 20px; }
 
 /* ==========================================================================
    Partners
