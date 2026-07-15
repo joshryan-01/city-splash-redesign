@@ -777,11 +777,15 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 /* ==========================================================================
    Community
    ========================================================================== */
-.community { background: var(--cs-green); color: var(--cs-white); }
-.community-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-.community .section-eyebrow { color: var(--cs-yellow); }
-.community h2 { color: var(--cs-white); }
-.community p { color: var(--cs-white); margin-bottom: 28px; }
+.community {
+  background: var(--cs-green);
+  color: var(--cs-white);
+  padding: clamp(28px, 4vw, 48px) 0;
+}
+.community-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.community .section-eyebrow { color: var(--cs-yellow); margin-bottom: 6px; }
+.community h2 { color: var(--cs-white); font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 10px; }
+.community p { color: var(--cs-white); margin-bottom: 16px; font-size: 0.95rem; }
 .community .btn-outline { color: var(--cs-white); border-color: var(--cs-white); }
 .community .btn-outline:hover { background: var(--cs-white); color: var(--cs-green); }
 
