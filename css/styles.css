@@ -841,6 +841,15 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   transition: max-height .25s ease;
 }
 .accordion-panel p { padding-bottom: 20px; color: var(--cs-charcoal); margin: 0; }
+.accordion-panel ul,
+.accordion-panel ol {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  color: var(--cs-charcoal);
+  margin: 0;
+}
+.accordion-panel li { margin-bottom: 8px; line-height: 1.7; }
+.accordion-panel a { color: var(--cs-pink); text-decoration: underline; }
 
 /* ==========================================================================
    Newsletter
