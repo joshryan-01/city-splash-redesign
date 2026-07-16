@@ -624,7 +624,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 #gallery { padding-top: 24px; }
 .carousel-viewport {
   overflow: hidden;
-  width: min(520px, 92vw);
+  width: min(400px, 82vw);
   margin: 0 auto;
 }
 .carousel-track {
@@ -641,9 +641,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .carousel-slide img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   border-radius: var(--radius);
   border: 3px solid var(--cs-black);
 }
@@ -690,10 +688,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .carousel-dots button[aria-selected="true"] { background: var(--cs-black); }
 
 @media (min-width: 640px) {
-  .carousel-viewport { width: min(580px, 52vw); }
-}
-@media (min-width: 900px) {
-  .carousel-viewport { width: min(640px, 44vw); }
+  .carousel-viewport { width: min(460px, 42vw); }
 }
 
 /* ==========================================================================
