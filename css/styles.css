@@ -762,6 +762,14 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   color: var(--cs-white);
   border-color: var(--cs-yellow);
 }
+.ticket-card-vip {
+  border-width: 3px;
+  border-color: var(--cs-yellow);
+  background: linear-gradient(165deg, #FFF6DC 0%, var(--cs-white) 45%);
+  box-shadow: 0 0 0 3px rgba(255, 210, 67, 0.3);
+}
+.ticket-card-vip .ticket-price { color: var(--cs-black); }
+.ticket-card-vip li::before { color: var(--cs-yellow-dark); }
 .ticket-badge {
   position: absolute;
   top: -14px; left: 24px;
@@ -774,6 +782,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   padding: 5px 12px;
   border-radius: 999px;
 }
+.ticket-badge-vip { background: var(--cs-black); color: var(--cs-yellow); }
 .ticket-price {
   font-family: var(--font-display);
   font-size: 1.8rem;
