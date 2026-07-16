@@ -756,7 +756,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   padding: 28px 24px;
   position: relative;
   background: var(--cs-white);
+  display: flex;
+  flex-direction: column;
 }
+.ticket-card .btn { margin-top: auto; }
 .ticket-card-featured {
   background: var(--cs-black);
   color: var(--cs-white);
