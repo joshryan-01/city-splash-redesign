@@ -444,6 +444,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   padding-top: 80px;
   padding-bottom: clamp(24px, 4vw, 40px);
   width: 100%;
+  text-align: center;
 }
 .eyebrow {
   font-family: var(--font-display);
@@ -504,12 +505,13 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .hero-tagline {
   font-size: clamp(1.1rem, 3vw, 1.5rem);
   max-width: 640px;
-  margin: 8px 0 10px;
+  margin: 8px auto 10px;
   font-weight: 500;
 }
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   font-weight: 600;
   color: var(--cs-white);
@@ -519,6 +521,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 
 .countdown {
   display: flex;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 18px;
 }
@@ -544,7 +547,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   color: var(--cs-white);
 }
 
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; }
+.hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 .hero-ctas .btn-outline { color: var(--cs-white); border-color: var(--cs-white); }
 .hero-ctas .btn-outline:hover { background: var(--cs-white); color: var(--cs-black); }
 
