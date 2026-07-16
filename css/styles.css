@@ -477,7 +477,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   color: var(--cs-yellow);
   margin: 0;
   letter-spacing: -0.03em;
-  -webkit-text-stroke: 2px var(--cs-black);
+  -webkit-text-stroke: 1px rgba(34, 33, 33, 0.55);
 }
 .hero-title .letter {
   display: inline-block;
