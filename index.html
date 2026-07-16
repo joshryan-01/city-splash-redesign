@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css?v=1784214499">
+<link rel="stylesheet" href="css/styles.css?v=1784214761">
 
 <!--
   TODO before going live: lineup is marked TBC pending confirmed acts; update
@@ -247,16 +247,23 @@
       <h2 class="center">Moments from the movement</h2>
     </div>
     <div class="gallery-grid">
-      <img src="assets/images/gallery-11.jpg" alt="Performer reaching up with a microphone in a fisheye shot of the City Splash mainstage rig." loading="lazy" width="1170" height="1276">
-      <img src="assets/images/gallery-12.jpg" alt="Four friends in colourful festival outfits posing together at dusk at City Splash." loading="lazy" width="1170" height="1285">
-      <img src="assets/images/gallery-4.webp" alt="Crowd at City Splash festival enjoying a live performance." loading="lazy" width="1500" height="1000">
-      <img src="assets/images/gallery-9.webp" alt="Festival-goers in colourful outfits at City Splash." loading="lazy" width="1500" height="1000">
-      <img src="assets/images/gallery-13.jpg" alt="Two festival-goers posing together at dusk at City Splash." loading="lazy" width="1170" height="1365">
-      <img src="assets/images/gallery-2.webp" alt="Performer on stage at City Splash festival." loading="lazy" width="1500" height="1000">
-      <img src="assets/images/gallery-8.webp" alt="Festival-goers enjoying the atmosphere at City Splash." loading="lazy" width="1500" height="1000">
-      <img src="assets/images/gallery-14.jpg" alt="A group of friends posing together near a food stall at City Splash." loading="lazy" width="1170" height="1269">
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-11.jpg" alt="Performer reaching up with a microphone in a fisheye shot of the City Splash mainstage rig." loading="lazy" width="1170" height="1276"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-12.jpg" alt="Four friends in colourful festival outfits posing together at dusk at City Splash." loading="lazy" width="1170" height="1285"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-4.webp" alt="Crowd at City Splash festival enjoying a live performance." loading="lazy" width="1500" height="1000"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-9.webp" alt="Festival-goers in colourful outfits at City Splash." loading="lazy" width="1500" height="1000"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-13.jpg" alt="Two festival-goers posing together at dusk at City Splash." loading="lazy" width="1170" height="1365"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-2.webp" alt="Performer on stage at City Splash festival." loading="lazy" width="1500" height="1000"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-8.webp" alt="Festival-goers enjoying the atmosphere at City Splash." loading="lazy" width="1500" height="1000"></button>
+      <button type="button" class="gallery-item"><img src="assets/images/gallery-14.jpg" alt="A group of friends posing together near a food stall at City Splash." loading="lazy" width="1170" height="1269"></button>
     </div>
   </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button type="button" class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <img src="" alt="" class="lightbox-img" id="lightbox-img">
+    <button type="button" class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+  </div>
 
   <!-- ============ NEWSLETTER ============ -->
   <section class="newsletter">
@@ -331,6 +338,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=1784213061"></script>
+<script src="js/script.js?v=1784214761"></script>
 </body>
 </html>

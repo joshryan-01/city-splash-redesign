@@ -272,6 +272,61 @@ if (!prefersReducedMotion) {
   }
 }
 
+// Gallery lightbox
+const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+const lightbox = document.getElementById('lightbox');
+if (galleryItems.length && lightbox) {
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  let lightboxIndex = 0;
+
+  function showLightboxImage() {
+    const img = galleryItems[lightboxIndex].querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+  }
+  function openLightbox(index) {
+    lightboxIndex = index;
+    showLightboxImage();
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+  function nextLightboxImage() {
+    lightboxIndex = (lightboxIndex + 1) % galleryItems.length;
+    showLightboxImage();
+  }
+  function prevLightboxImage() {
+    lightboxIndex = (lightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+    showLightboxImage();
+  }
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index));
+  });
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxNext.addEventListener('click', nextLightboxImage);
+  lightboxPrev.addEventListener('click', prevLightboxImage);
+
+  // Click the dark backdrop (not the image or the arrows/close button) to dismiss
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextLightboxImage();
+    if (e.key === 'ArrowLeft') prevLightboxImage();
+  });
+}
+
 // FAQ accordion
 document.querySelectorAll('.accordion-trigger').forEach((trigger) => {
   const panel = trigger.nextElementSibling;
