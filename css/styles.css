@@ -406,23 +406,23 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  /* Stops WebKit rendering its "tap to play" glyph over the video when
-     autoplay is blocked (e.g. iOS Low Power Mode) - it just shows the
-     poster frame instead. The first-tap-anywhere fallback in script.js
-     still starts playback since that listener is on document, not this
-     element. */
   pointer-events: none;
 }
-/* The giant central play button iOS Safari overlays on a <video> that
-   hasn't started playing yet - pointer-events doesn't touch it since it's
-   WebKit's own UI chrome, not part of the page's render/click tree. */
-#hero-video::-webkit-media-controls,
-#hero-video::-webkit-media-controls-start-playback-button,
-#hero-video::-webkit-media-controls-panel {
-  display: none !important;
-  -webkit-appearance: none;
-  opacity: 0 !important;
-  pointer-events: none !important;
+/* iOS shows a native "tap to play" glyph inside a <video> that hasn't
+   started playing yet, and WebKit doesn't expose a CSS hook to remove
+   it directly. Instead the video stays fully transparent - glyph
+   included, since it's part of the element - until script.js confirms
+   real playback via the 'playing' event. The poster <img> underneath
+   is what's actually visible until then, so a blocked autoplay (e.g.
+   iOS Low Power Mode) just looks like a static photo, not a broken
+   play button. */
+.hero-bg-video {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.hero-bg-video.is-playing {
+  opacity: 1;
 }
 .hero-scrim {
   position: absolute;

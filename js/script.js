@@ -16,6 +16,13 @@ if (heroVideo) {
     heroVideo.addEventListener('loadedmetadata', tryPlay);
     heroVideo.addEventListener('canplay', tryPlay);
     document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+
+    // Only reveal the video (fading it in over the poster photo) once
+    // frames are actually rendering — not just once play() resolves,
+    // since that can fire even when playback is blocked. Until then the
+    // video stays invisible, which hides any native "tap to play" glyph
+    // WebKit overlays on it (e.g. iOS Low Power Mode) along with it.
+    heroVideo.addEventListener('playing', () => heroVideo.classList.add('is-playing'));
   }
 }
 
