@@ -284,8 +284,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .main-nav > ul > li > a {
   display: inline-flex;
   align-items: center;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-size: 1.05rem;
   line-height: 1;
   position: relative;
   padding-bottom: 4px;
@@ -314,8 +316,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   -webkit-appearance: none;
   margin: 0;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-size: 1.05rem;
   line-height: 1;
   color: inherit;
   padding: 0 0 4px;
@@ -359,8 +363,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
     display: block;
     padding: 10px 12px;
     border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    font-size: 1rem;
   }
   .dropdown-menu li a:hover { background: rgba(251, 187, 14, 0.14); }
 }
@@ -1169,7 +1175,9 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
     display: block;
     color: rgba(255,255,255,0.75);
     padding: 12px 0;
-    font-size: 1rem;
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    font-size: 1.05rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 }
