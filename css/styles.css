@@ -959,7 +959,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    Responsive — tablet & up
    ========================================================================== */
 @media (min-width: 640px) {
-  .stats-grid { grid-template-columns: repeat(5, 1fr); }
+  .stats-grid { grid-template-columns: repeat(6, 1fr); }
   .pillars-grid { grid-template-columns: repeat(3, 1fr); }
   .headliners { grid-template-columns: repeat(3, 1fr); }
   .ticket-grid { grid-template-columns: repeat(3, 1fr); }
