@@ -1,3 +1,10 @@
+// Hero background video — don't autoplay for users who've asked for reduced motion
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.pause();
+  heroVideo.removeAttribute('autoplay');
+}
+
 // Poster carousel (homepage) — one slide visible at a time, loops both ways
 const posterTrack = document.getElementById('poster-track');
 if (posterTrack) {

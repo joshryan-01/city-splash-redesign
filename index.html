@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/styles.css?v=1784198397">
+<link rel="stylesheet" href="css/styles.css?v=1784199018">
 
 <!--
   TODO before going live: lineup is marked TBC pending confirmed acts; update
@@ -115,7 +115,10 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <img src="assets/images/hero-crowd.webp" alt="Aerial view of a huge crowd facing the main stage at City Splash festival in Brockwell Park, banners reading 'The Home of Culture' along the stage rig." class="hero-bg" width="2500" height="1667">
+    <video class="hero-bg" id="hero-video" autoplay muted loop playsinline poster="assets/images/hero-crowd.webp" aria-hidden="true">
+      <source src="assets/videos/hero-crowd.mp4" type="video/mp4">
+      <img src="assets/images/hero-crowd.webp" alt="Aerial view of a huge crowd facing the main stage at City Splash festival in Brockwell Park, banners reading 'The Home of Culture' along the stage rig." class="hero-bg" width="2500" height="1667">
+    </video>
     <div class="hero-scrim"></div>
     <div class="container hero-inner">
       <p class="eyebrow">#TheHomeOfCulture</p>
@@ -325,6 +328,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=1784136245"></script>
+<script src="js/script.js?v=1784199018"></script>
 </body>
 </html>
