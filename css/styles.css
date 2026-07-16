@@ -452,15 +452,13 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   font-size: 1.6rem;
   margin: 0 0 8px;
   display: inline-block;
-  color: var(--cs-yellow);
-  background: linear-gradient(90deg, #C5362C 0%, #C5362C 33%, var(--cs-yellow) 33%, var(--cs-yellow) 66%, var(--cs-green) 66%, var(--cs-green) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   opacity: 0;
   animation: eyebrowIn 0.6s ease forwards;
   animation-delay: 0.1s;
 }
+.eyebrow-red { color: #C5362C; }
+.eyebrow-gold { color: var(--cs-yellow); }
+.eyebrow-green { color: var(--cs-green); }
 
 @keyframes eyebrowIn {
   from { opacity: 0; transform: translateY(-10px); }
