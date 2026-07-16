@@ -188,6 +188,26 @@ if (moreToggle && moreMenu) {
 // Countdown timer: City Splash, Monday 31 May 2027, Brockwell Park
 const COUNTDOWN_TARGET = new Date('2027-05-31T12:00:00+01:00').getTime();
 
+const prefersReducedMotionCountdown = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Flips a countdown digit like an old departure board when its value
+// changes - swaps the text at the midpoint of a quick rotateX animation
+// instead of just snapping to the new number.
+function flipCountdownDigit(el, newValue) {
+  if (el.textContent === newValue) return;
+  if (prefersReducedMotionCountdown) {
+    el.textContent = newValue;
+    return;
+  }
+  el.classList.add('flip-out');
+  setTimeout(() => {
+    el.textContent = newValue;
+    el.classList.remove('flip-out');
+    el.classList.add('flip-in');
+    setTimeout(() => el.classList.remove('flip-in'), 200);
+  }, 150);
+}
+
 function updateCountdown() {
   const daysEl = document.getElementById('cd-days');
   const hoursEl = document.getElementById('cd-hours');
@@ -202,15 +222,27 @@ function updateCountdown() {
   }
 
   const pad = (n) => String(n).padStart(2, '0');
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const mins = Math.floor((diff % 3600000) / 60000);
-  const secs = Math.floor((diff % 60000) / 1000);
+  const days = pad(Math.floor(diff / 86400000));
+  const hours = pad(Math.floor((diff % 86400000) / 3600000));
+  const mins = pad(Math.floor((diff % 3600000) / 60000));
+  const secs = pad(Math.floor((diff % 60000) / 1000));
+  const secsChanged = secsEl.textContent !== secs;
 
-  daysEl.textContent = pad(days);
-  hoursEl.textContent = pad(hours);
-  minsEl.textContent = pad(mins);
-  secsEl.textContent = pad(secs);
+  flipCountdownDigit(daysEl, days);
+  flipCountdownDigit(hoursEl, hours);
+  flipCountdownDigit(minsEl, mins);
+  flipCountdownDigit(secsEl, secs);
+
+  // Extra pulse on the seconds chip specifically, since it's the one
+  // visibly "alive" every tick rather than just occasionally.
+  if (secsChanged && !prefersReducedMotionCountdown) {
+    const secsUnit = secsEl.closest('.countdown-unit');
+    if (secsUnit) {
+      secsUnit.classList.remove('countdown-pulse');
+      void secsUnit.offsetWidth;
+      secsUnit.classList.add('countdown-pulse');
+    }
+  }
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
