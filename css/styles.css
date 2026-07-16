@@ -15,17 +15,32 @@
   --cs-white: #FFFFFF;        /* Secondary: White */
   --cs-cream: #FFFFFF;        /* aliased to official White, no invented off-white tint */
 
-  /* Brand guide names Compacta BT (display) and Resolve Sans Medium Ext (body/support):
-     both commercial fonts we don't have license files for here. These are the closest
-     free equivalents: Bebas Neue is condensed/all-caps like Compacta BT, Urbanist is an
-     open, medium-weight grotesque in the spirit of Resolve Sans Medium Ext. Swap in the
-     real font files if you have them licensed. */
-  --font-display: 'Bebas Neue', Impact, sans-serif;
-  --font-body: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Real licensed brand fonts (self-hosted, see @font-face below). The
+     Resolve Sans file supplied is the Light weight, not the Medium Ext
+     cut the brand guide names - swap in that file here if it's sourced
+     later. Bebas Neue / Urbanist stay in the stack as the fallback while
+     the webfonts load, and for any environment where they fail to. */
+  --font-display: 'Compacta BT', 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'Resolve Sans', 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --max-width: 1200px;
   --radius: 14px;
   --gutter: 20px;
+}
+
+@font-face {
+  font-family: 'Compacta BT';
+  src: url('../assets/fonts/CompactaBT-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Resolve Sans';
+  src: url('../assets/fonts/Resolve-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* ==========================================================================
