@@ -1,8 +1,22 @@
 // Hero background video — don't autoplay for users who've asked for reduced motion
 const heroVideo = document.getElementById('hero-video');
-if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  heroVideo.pause();
-  heroVideo.removeAttribute('autoplay');
+if (heroVideo) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('autoplay');
+  } else {
+    // Some mobile browsers only honour autoplay if muted is also set as a JS
+    // property (not just the HTML attribute), and can silently reject the
+    // play() promise — which leaves the video paused on its poster frame
+    // with a visible native play button. Set muted explicitly and retry.
+    heroVideo.muted = true;
+    heroVideo.setAttribute('muted', '');
+    const tryPlay = () => heroVideo.play().catch(() => {});
+    tryPlay();
+    heroVideo.addEventListener('loadedmetadata', tryPlay);
+    heroVideo.addEventListener('canplay', tryPlay);
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+  }
 }
 
 // Poster carousel (homepage) — one slide visible at a time, loops both ways
