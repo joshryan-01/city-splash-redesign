@@ -641,7 +641,9 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .carousel-slide img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius);
   border: 3px solid var(--cs-black);
 }
