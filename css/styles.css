@@ -413,6 +413,17 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
      element. */
   pointer-events: none;
 }
+/* The giant central play button iOS Safari overlays on a <video> that
+   hasn't started playing yet - pointer-events doesn't touch it since it's
+   WebKit's own UI chrome, not part of the page's render/click tree. */
+#hero-video::-webkit-media-controls,
+#hero-video::-webkit-media-controls-start-playback-button,
+#hero-video::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 .hero-scrim {
   position: absolute;
   inset: 0;
