@@ -553,7 +553,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    ========================================================================== */
 .poster-carousel { padding-top: 32px; padding-bottom: 24px; }
 #about { padding-top: 24px; padding-bottom: 24px; }
-#tickets { padding-top: 24px; }
+#tickets { padding-top: 24px; padding-bottom: 24px; }
+#gallery { padding-top: 24px; }
 .carousel-viewport {
   overflow: hidden;
   width: min(400px, 82vw);
