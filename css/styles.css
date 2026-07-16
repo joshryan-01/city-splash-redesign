@@ -406,6 +406,12 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  /* Stops WebKit rendering its "tap to play" glyph over the video when
+     autoplay is blocked (e.g. iOS Low Power Mode) - it just shows the
+     poster frame instead. The first-tap-anywhere fallback in script.js
+     still starts playback since that listener is on document, not this
+     element. */
+  pointer-events: none;
 }
 .hero-scrim {
   position: absolute;
