@@ -624,7 +624,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 #gallery { padding-top: 24px; }
 .carousel-viewport {
   overflow: hidden;
-  width: min(460px, 90vw);
+  width: min(520px, 92vw);
   margin: 0 auto;
 }
 .carousel-track {
@@ -688,10 +688,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .carousel-dots button[aria-selected="true"] { background: var(--cs-black); }
 
 @media (min-width: 640px) {
-  .carousel-viewport { width: min(500px, 46vw); }
+  .carousel-viewport { width: min(580px, 52vw); }
 }
 @media (min-width: 900px) {
-  .carousel-viewport { width: min(520px, 36vw); }
+  .carousel-viewport { width: min(640px, 44vw); }
 }
 
 /* ==========================================================================
