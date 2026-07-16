@@ -396,7 +396,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   position: relative;
   min-height: 82svh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   /* A playing <video> can get promoted to its own hardware compositing
      layer on iOS Safari and ignore normal z-index ordering against its
@@ -441,7 +441,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   z-index: 3;
   transform: translateZ(0);
   color: var(--cs-white);
-  padding-top: 80px;
+  padding-top: clamp(24px, 4vw, 40px);
   padding-bottom: clamp(24px, 4vw, 40px);
   width: 100%;
   text-align: center;
