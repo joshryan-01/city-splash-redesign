@@ -1,4 +1,4 @@
-// Hero background video — don't autoplay for users who've asked for reduced motion
+// Hero background video: don't autoplay for users who've asked for reduced motion
 const heroVideo = document.getElementById('hero-video');
 if (heroVideo) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -7,7 +7,7 @@ if (heroVideo) {
   } else {
     // Some mobile browsers only honour autoplay if muted is also set as a JS
     // property (not just the HTML attribute), and can silently reject the
-    // play() promise — which leaves the video paused on its poster frame
+    // play() promise, which leaves the video paused on its poster frame
     // with a visible native play button. Set muted explicitly and retry.
     heroVideo.muted = true;
     heroVideo.setAttribute('muted', '');
@@ -18,7 +18,7 @@ if (heroVideo) {
     document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
 
     // Only reveal the video (fading it in over the poster photo) once
-    // frames are actually rendering — not just once play() resolves,
+    // frames are actually rendering, not just once play() resolves,
     // since that can fire even when playback is blocked. Until then the
     // video stays invisible, which hides any native "tap to play" glyph
     // WebKit overlays on it (e.g. iOS Low Power Mode) along with it.
@@ -26,7 +26,7 @@ if (heroVideo) {
   }
 }
 
-// Poster carousel (homepage) — one slide visible at a time, loops both ways
+// Poster carousel (homepage): one slide visible at a time, loops both ways
 const posterTrack = document.getElementById('poster-track');
 if (posterTrack) {
   const slides = Array.from(posterTrack.children);
@@ -185,7 +185,7 @@ if (moreToggle && moreMenu) {
   });
 }
 
-// Countdown timer — City Splash, Monday 31 May 2027, Brockwell Park
+// Countdown timer: City Splash, Monday 31 May 2027, Brockwell Park
 const COUNTDOWN_TARGET = new Date('2027-05-31T12:00:00+01:00').getTime();
 
 function updateCountdown() {
@@ -258,14 +258,14 @@ document.querySelectorAll('.accordion-trigger').forEach((trigger) => {
   });
 });
 
-// Newsletter form (demo only — no backend wired up)
+// Newsletter form (demo only, no backend wired up)
 const newsletterForm = document.getElementById('newsletter-form');
 const newsletterStatus = document.getElementById('newsletter-status');
 
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    newsletterStatus.textContent = "Thanks — you're on the list! (demo form, not yet connected)";
+    newsletterStatus.textContent = "Thanks, you're on the list! (demo form, not yet connected)";
     newsletterForm.reset();
   });
 }
