@@ -253,7 +253,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 if (!prefersReducedMotion) {
   const revealEls = document.querySelectorAll(
-    'section h2, .pillar, .ticket-card, .headliner-card, .sponsor-card, .cohort-card, .product-card'
+    'section h2, .pillar, .ticket-card, .lineup-tile, .sponsor-card, .cohort-card, .product-card'
   );
   if (revealEls.length && 'IntersectionObserver' in window) {
     revealEls.forEach((el) => el.classList.add('reveal'));
