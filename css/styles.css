@@ -935,7 +935,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .ticket-card-vip .btn-primary:hover { background: var(--cs-white); border-color: var(--cs-white); }
 .ticket-badge {
   position: absolute;
-  top: -18px; left: 24px;
+  top: -26px; left: 24px;
   background: var(--cs-pink);
   color: var(--cs-white);
   font-size: 0.75rem;
