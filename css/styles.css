@@ -629,6 +629,11 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   font-size: clamp(2rem, 6vw, 3rem);
   color: var(--cs-yellow);
 }
+/* Compacta BT's "+" glyph has an oversized advance width baked into the
+   font file (roughly double a digit's), leaving a big gap after it and
+   throwing the number off-centre from its label below. Pull it back in
+   to compensate. */
+.stat-plus { margin-left: -0.22em; }
 .stat-label {
   color: var(--cs-white);
   text-transform: uppercase;
