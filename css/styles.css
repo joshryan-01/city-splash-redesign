@@ -723,6 +723,23 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   .carousel-viewport { width: min(460px, 42vw); }
 }
 
+/* Desktop: show both posters side by side instead of the one-at-a-time
+   sliding carousel - avoids the large empty margins either side of a
+   single narrow poster in a wide section. Mobile/tablet keep the
+   slider unchanged. transform: none !important overrides the inline
+   transform script.js applies for the slide animation. */
+@media (min-width: 900px) {
+  .carousel-viewport { width: min(820px, 90vw); overflow: visible; }
+  .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    transform: none !important;
+  }
+  .carousel-slide { width: auto; }
+  .carousel-controls { display: none; }
+}
+
 /* ==========================================================================
    About
    ========================================================================== */
