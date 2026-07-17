@@ -919,6 +919,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   background: var(--cs-black);
   color: var(--cs-white);
   border-color: var(--cs-yellow);
+  padding-top: 40px;
 }
 .ticket-card-vip {
   border-width: 3px;
@@ -926,6 +927,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   background: var(--cs-green);
   color: var(--cs-white);
   box-shadow: 0 0 0 3px rgba(255, 210, 67, 0.3);
+  padding-top: 40px;
 }
 .ticket-card-vip .ticket-price { color: var(--cs-yellow); }
 .ticket-card-vip li::before { color: var(--cs-yellow); }
@@ -933,17 +935,19 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .ticket-card-vip .btn-primary:hover { background: var(--cs-white); border-color: var(--cs-white); }
 .ticket-badge {
   position: absolute;
-  top: -14px; left: 24px;
+  top: -18px; left: 24px;
   background: var(--cs-pink);
   color: var(--cs-white);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  padding: 5px 12px;
+  padding: 8px 18px;
   border-radius: 999px;
+  border: 2px solid var(--cs-black);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
-.ticket-badge-vip { background: var(--cs-black); color: var(--cs-yellow); }
+.ticket-badge-vip { background: var(--cs-black); color: var(--cs-yellow); border-color: var(--cs-yellow); }
 .ticket-price {
   font-family: var(--font-display);
   font-size: 1.8rem;
