@@ -1558,6 +1558,44 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .legal-content li { padding: 4px 0; color: var(--cs-charcoal); }
 .legal-content address { font-style: normal; color: var(--cs-charcoal); }
 
+/* ==========================================================================
+   404
+   ========================================================================== */
+.error-404 {
+  background: var(--cs-black);
+  color: var(--cs-white);
+  padding: 160px 0 120px;
+  text-align: center;
+}
+.error-404-inner { max-width: 560px; margin: 0 auto; }
+.error-404-code {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  font-size: clamp(5rem, 20vw, 9rem);
+  line-height: 0.85;
+  color: var(--cs-yellow);
+  -webkit-text-stroke: 2px var(--cs-black);
+  margin: 0;
+}
+.error-404 h1 {
+  color: var(--cs-yellow);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  margin: 8px 0 16px;
+}
+.error-404 p.lead {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05rem;
+  margin: 0 0 32px;
+}
+.error-404-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.error-404-ctas .btn-outline { color: var(--cs-white); border-color: var(--cs-white); }
+.error-404-ctas .btn-outline:hover { background: var(--cs-white); color: var(--cs-black); }
+
 /* Scroll reveal (homepage sections) */
 .reveal {
   opacity: 0;
