@@ -139,6 +139,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   border-color: var(--cs-yellow);
 }
 .btn-primary:hover { background: var(--cs-yellow-dark); border-color: var(--cs-yellow-dark); }
+
+/* Drumsheds pre-sale sign-up form */
+#ds-submit { border-color: var(--cs-black); }
+#ds-submit:hover { border-color: var(--cs-black); }
 .btn-outline {
   background: transparent;
   color: var(--cs-black);
