@@ -997,6 +997,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    ========================================================================== */
 .travel-map-section {
   background: var(--cs-yellow);
+  border-top: 3px solid var(--cs-black);
   padding-top: clamp(72px, 12vw, 140px);
   padding-bottom: clamp(72px, 12vw, 140px);
 }
@@ -1026,14 +1027,37 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   border: 0;
 }
 
-.map-key-info {
-  display: grid;
-  gap: 14px;
-  align-content: start;
+.map-key-panel {
+  display: flex;
+  flex-direction: column;
   background: var(--cs-white);
   border: 3px solid var(--cs-black);
   border-radius: var(--radius);
   padding: 20px;
+}
+.map-key-heading {
+  font-family: var(--font-display);
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--cs-pink);
+  margin: 0 0 16px;
+}
+.map-key-info {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+}
+.map-key-note {
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.82rem;
+  color: var(--cs-charcoal);
 }
 .map-key-info li {
   display: flex;
@@ -1061,6 +1085,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .map-key-dot--rail { background: var(--cs-yellow); }
 .map-key-dot--tube { background: var(--cs-pink); }
+.map-key-dot--bus { background: var(--cs-green); }
 .map-key-dot--shop { background: var(--cs-white); }
 .map-key-dot--lido { background: #4FB8E0; }
 
