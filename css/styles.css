@@ -995,14 +995,18 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 /* ==========================================================================
    Travel: area map
    ========================================================================== */
-.travel-map-section { background: var(--cs-cream); }
+.travel-map-section {
+  background: var(--cs-yellow);
+  padding-top: clamp(72px, 12vw, 140px);
+  padding-bottom: clamp(72px, 12vw, 140px);
+}
 .map-intro { margin: 0 auto 36px; }
 
 .map-embed-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  max-width: 900px;
+  gap: 24px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 .map-embed-frame {
@@ -1062,7 +1066,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 
 @media (min-width: 720px) {
   .map-embed-grid { grid-template-columns: 1.4fr 1fr; align-items: stretch; }
-  .map-embed-frame { aspect-ratio: auto; }
+  .map-embed-frame { aspect-ratio: auto; min-height: 480px; }
 }
 
 /* ==========================================================================
