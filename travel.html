@@ -94,60 +94,47 @@
     <div class="container">
       <p class="section-eyebrow center">The area</p>
       <h2 class="center">Find your way</h2>
-      <p class="section-intro center map-intro">A rough guide to the park and what's around it &mdash; walking routes from the two nearest stations, plotted to real distance and direction (not to exact scale).</p>
+      <p class="section-intro center map-intro">Brockwell Park and what's around it.</p>
 
-      <div class="travel-map" role="img" aria-label="Stylised map of Brockwell Park showing Herne Hill station around 350 metres northeast, Brixton station around 1.5 kilometres northwest, Brixton Market beside it, Brockwell Lido inside the park, and Norwood Road and Dulwich Road bordering the park.">
-        <svg viewBox="0 0 660 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- roads -->
-          <path class="map-road" d="M430,40 L430,470" />
-          <text class="map-road-label" x="436" y="36">Norwood Road</text>
-          <path class="map-road" d="M210,266 L440,255" />
-          <text class="map-road-label" x="214" y="284">Dulwich Road</text>
-          <path class="map-road" d="M266,276 L155,90" />
-          <text class="map-road-label" x="150" y="182" transform="rotate(-59 150 182)">Brixton Water Lane</text>
-
-          <!-- park -->
-          <ellipse class="map-park" cx="320" cy="350" rx="145" ry="115" transform="rotate(-8 320 350)" />
-          <text class="map-park-label" x="320" y="435" text-anchor="middle">Brockwell Park</text>
-
-          <!-- walking routes -->
-          <path class="map-route" d="M400,255 C 378,282 348,304 312,335" />
-          <path class="map-route map-route-long" d="M140,70 C 96,152 178,262 312,335" />
-
-          <!-- Brockwell Lido -->
-          <g class="map-poi" transform="translate(350,385)">
-            <circle r="9" class="map-poi-dot map-poi-dot--lido" />
-            <text x="14" y="4" class="map-poi-label">Brockwell Lido</text>
-          </g>
-
-          <!-- festival site -->
-          <g class="map-site" transform="translate(312,335)">
-            <circle r="16" class="map-site-pulse" />
-            <circle r="7" class="map-site-dot" />
-            <text x="0" y="30" text-anchor="middle" class="map-site-label">Festival site</text>
-          </g>
-
-          <!-- Herne Hill station -->
-          <g class="map-poi" transform="translate(400,255)">
-            <circle r="10" class="map-poi-dot map-poi-dot--rail" />
-            <text x="14" y="-6" class="map-poi-label map-poi-label--strong">Herne Hill Station</text>
-            <text x="14" y="12" class="map-poi-sub">rail &middot; ~350m, 5 min walk</text>
-          </g>
-
-          <!-- Brixton station + market -->
-          <g class="map-poi" transform="translate(140,70)">
-            <circle r="10" class="map-poi-dot map-poi-dot--tube" />
-            <text x="-14" y="-16" text-anchor="end" class="map-poi-label map-poi-label--strong">Brixton Station</text>
-            <text x="-14" y="1" text-anchor="end" class="map-poi-sub">Victoria line</text>
-            <text x="-14" y="15" text-anchor="end" class="map-poi-sub">~1.5km, 15&ndash;20 min walk</text>
-          </g>
-          <g class="map-poi" transform="translate(160,92)">
-            <circle r="8" class="map-poi-dot map-poi-dot--shop" />
-            <text x="-13" y="24" text-anchor="end" class="map-poi-label">Brixton Market</text>
-          </g>
-        </svg>
+      <div class="map-embed-grid">
+        <div class="map-embed-frame">
+          <iframe
+            src="https://maps.google.com/maps?q=Brockwell%20Park%2C%20Brixton%2C%20London&z=15&output=embed"
+            title="Map of Brockwell Park and the surrounding area"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <ul class="map-key-info">
+          <li>
+            <span class="map-key-dot map-key-dot--rail" aria-hidden="true"></span>
+            <div>
+              <strong>Herne Hill Station</strong>
+              <span>Rail &middot; ~350m, 5 min walk</span>
+            </div>
+          </li>
+          <li>
+            <span class="map-key-dot map-key-dot--tube" aria-hidden="true"></span>
+            <div>
+              <strong>Brixton Station</strong>
+              <span>Victoria line &middot; ~1.5km, 15&ndash;20 min walk</span>
+            </div>
+          </li>
+          <li>
+            <span class="map-key-dot map-key-dot--shop" aria-hidden="true"></span>
+            <div>
+              <strong>Brixton Market</strong>
+              <span>Shops &amp; food, right by Brixton station</span>
+            </div>
+          </li>
+          <li>
+            <span class="map-key-dot map-key-dot--lido" aria-hidden="true"></span>
+            <div>
+              <strong>Brockwell Lido</strong>
+              <span>Open-air pool, inside the park</span>
+            </div>
+          </li>
+        </ul>
       </div>
-      <p class="map-caption">Straight-line distances and directions are accurate; road paths are simplified for clarity.</p>
     </div>
   </section>
 
