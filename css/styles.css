@@ -374,11 +374,11 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .header-cta {
   padding: 12px 32px;
   font-size: 1.05rem;
-  background: var(--cs-yellow-dark);
-  border-color: var(--cs-yellow-dark);
-  color: var(--cs-black);
+  background: var(--cs-black);
+  border-color: var(--cs-black);
+  color: var(--cs-yellow);
 }
-.header-cta:hover { background: #B8952E; border-color: #B8952E; }
+.header-cta:hover { background: var(--cs-yellow); border-color: var(--cs-black); color: var(--cs-black); }
 
 .nav-toggle {
   display: none;
