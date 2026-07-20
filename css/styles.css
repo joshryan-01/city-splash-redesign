@@ -1529,6 +1529,34 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   background-position: center 30%;
 }
 
+/* FAQs: pink hero band with the real site's own decorative sticker
+   illustrations, instead of a photo. Text sits in its own stacking
+   context above the stickers so it always stays readable. */
+.page-hero-faqs {
+  background: var(--cs-pink);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero-faqs .container { position: relative; z-index: 1; }
+.page-hero-faqs .section-eyebrow { color: var(--cs-yellow); }
+.page-hero-faqs h1 { color: var(--cs-yellow); -webkit-text-stroke: 0; }
+.page-hero-faqs p.lead { color: var(--cs-white); }
+.page-hero-faqs .hero-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero-faqs .hero-decor-leaf { left: -24px; bottom: -24px; width: 130px; transform: rotate(-6deg); }
+.page-hero-faqs .hero-decor-circles-green { left: 64px; bottom: 64px; width: 64px; }
+.page-hero-faqs .hero-decor-circles-orange { right: -20px; top: 16px; width: 110px; }
+.page-hero-faqs .hero-decor-lines { right: 48px; bottom: -16px; width: 90px; }
+@media (max-width: 640px) {
+  .page-hero-faqs .hero-decor-circles-orange { width: 80px; top: -10px; }
+  .page-hero-faqs .hero-decor-lines { width: 64px; }
+  .page-hero-faqs .hero-decor-leaf { width: 100px; }
+  .page-hero-faqs .hero-decor-circles-green { width: 46px; bottom: 44px; }
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
