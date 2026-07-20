@@ -1522,6 +1522,13 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   background-position: center 35%;
 }
 
+/* City Splash Week: dusk community-stage photo behind the hero band only. */
+.page-hero-csweek {
+  background-image: linear-gradient(180deg, rgba(20,19,19,0.4), rgba(20,19,19,0.85)), url('../assets/images/gallery-4.webp');
+  background-size: cover;
+  background-position: center 30%;
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
