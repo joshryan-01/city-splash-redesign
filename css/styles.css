@@ -1514,6 +1514,14 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .page-hero-riseup h1 { color: var(--cs-green); -webkit-text-stroke: 0; }
 .page-hero-riseup p.lead { color: var(--cs-black); }
 
+/* Line-up: night stage photo behind the hero band only, with a dark
+   gradient so the yellow/white hero text stays readable over it. */
+.page-hero-lineup {
+  background-image: linear-gradient(180deg, rgba(20,19,19,0.4), rgba(20,19,19,0.85)), url('../assets/images/lineup-hero.jpg');
+  background-size: cover;
+  background-position: center 35%;
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
