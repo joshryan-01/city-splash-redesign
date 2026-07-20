@@ -1557,6 +1557,35 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   .page-hero-faqs .hero-decor-circles-green { width: 46px; bottom: 44px; }
 }
 
+/* Contact: same decorative-sticker theme as FAQs, but its own colour (deep
+   magenta, which contrasts with all four stickers unlike orange or green
+   backgrounds would) and a mirrored layout so it reads as its own page,
+   not a re-skin of the FAQs hero. */
+.page-hero-contact {
+  background: var(--cs-magenta);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero-contact .container { position: relative; z-index: 1; }
+.page-hero-contact .section-eyebrow { color: var(--cs-yellow); }
+.page-hero-contact h1 { color: var(--cs-yellow); -webkit-text-stroke: 0; }
+.page-hero-contact p.lead { color: var(--cs-white); }
+.page-hero-contact .hero-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero-contact .hero-decor-leaf { right: -24px; top: -24px; width: 130px; transform: rotate(160deg); }
+.page-hero-contact .hero-decor-circles-green { right: 64px; top: 60px; width: 64px; }
+.page-hero-contact .hero-decor-circles-orange { left: -20px; bottom: 8px; width: 110px; }
+.page-hero-contact .hero-decor-lines { left: 48px; top: -16px; width: 90px; }
+@media (max-width: 640px) {
+  .page-hero-contact .hero-decor-circles-orange { width: 80px; bottom: -16px; }
+  .page-hero-contact .hero-decor-lines { width: 64px; }
+  .page-hero-contact .hero-decor-leaf { width: 100px; }
+  .page-hero-contact .hero-decor-circles-green { width: 46px; top: 44px; }
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
