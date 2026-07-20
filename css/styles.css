@@ -1501,6 +1501,19 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .drumsheds-hero .consent-required { color: rgba(255,255,255,0.75); }
 .drumsheds-hero .consent-item input[type="checkbox"] { border-color: var(--cs-white); }
 
+/* Rise Up: illustrated palm-tree pattern behind the hero band only (matches
+   the real Rise Up page), swapping the yellow/white hero text for dark
+   green so it stays readable against the bright pattern. */
+.page-hero-riseup {
+  background-image: url('../assets/images/riseup-pattern.webp');
+  background-size: cover;
+  background-position: center;
+  color: var(--cs-black);
+}
+.page-hero-riseup .section-eyebrow { color: var(--cs-green); }
+.page-hero-riseup h1 { color: var(--cs-green); -webkit-text-stroke: 0; }
+.page-hero-riseup p.lead { color: var(--cs-black); }
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
