@@ -1479,6 +1479,28 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   margin: 0;
 }
 
+/* Drumsheds: one continuous photo background behind both the title band and
+   the sign-up form below it, like the real Drumsheds page. The gradient
+   keeps text readable over whatever part of the image sits behind it, and
+   the two child sections go transparent so the image shows through both. */
+.drumsheds-hero {
+  background-image: linear-gradient(180deg, rgba(34,33,33,0.35), rgba(34,33,33,0.9)), url('../assets/images/drumsheds-venue.webp');
+  background-size: cover;
+  background-position: center 20%;
+}
+.drumsheds-hero .page-hero { background: none; padding-bottom: 40px; }
+.drumsheds-hero .tickets { padding-bottom: clamp(40px, 6vw, 72px); }
+.drumsheds-hero .tickets .section-eyebrow { color: var(--cs-yellow); }
+.drumsheds-hero .tickets h2 { color: var(--cs-white); }
+.drumsheds-hero .tickets .section-intro { color: rgba(255,255,255,0.85); }
+.drumsheds-hero .form-heading,
+.drumsheds-hero .form-label,
+.drumsheds-hero .consent-item { color: var(--cs-white); }
+.drumsheds-hero .consent-required-tag,
+.drumsheds-hero .consent-text,
+.drumsheds-hero .consent-required { color: rgba(255,255,255,0.75); }
+.drumsheds-hero .consent-item input[type="checkbox"] { border-color: var(--cs-white); }
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
