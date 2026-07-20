@@ -26,13 +26,17 @@ if (heroVideo) {
   }
 }
 
-// Poster carousel (homepage): one slide visible at a time, loops both ways
-const posterTrack = document.getElementById('poster-track');
-if (posterTrack) {
-  const slides = Array.from(posterTrack.children);
-  const dotsWrap = document.getElementById('carousel-dots');
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
+// Generic sliding carousel: one slide visible at a time, loops both ways,
+// auto-advances, and pauses on hover/focus/touch. Used for the homepage
+// poster carousel and the line-up headliner reveal carousel.
+function initCarousel({ trackId, dotsId, prevId, nextId, viewportSelector }) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+
+  const slides = Array.from(track.children);
+  const dotsWrap = document.getElementById(dotsId);
+  const prevBtn = document.getElementById(prevId);
+  const nextBtn = document.getElementById(nextId);
   let current = 0;
 
   const dots = slides.map((_, i) => {
@@ -47,15 +51,15 @@ if (posterTrack) {
 
   function goTo(index) {
     current = (index + slides.length) % slides.length;
-    posterTrack.style.transform = `translateX(-${current * 100}%)`;
+    track.style.transform = `translateX(-${current * 100}%)`;
     dots.forEach((dot, i) => dot.setAttribute('aria-selected', String(i === current)));
   }
 
   goTo(0);
 
-  // Auto-advance every 6 seconds, pausing while the user is interacting with it
+  // Auto-advance every 3.5 seconds, pausing while the user is interacting with it
   const AUTO_ADVANCE_MS = 3500;
-  const carouselHoverZone = document.querySelector('.carousel-viewport');
+  const carouselHoverZone = document.querySelector(viewportSelector);
   const prefersReducedMotionCarousel = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let autoTimer = null;
 
@@ -87,11 +91,11 @@ if (posterTrack) {
 
   // Basic touch swipe support
   let touchStartX = null;
-  posterTrack.addEventListener('touchstart', (e) => {
+  track.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
     stopAutoAdvance();
   }, { passive: true });
-  posterTrack.addEventListener('touchend', (e) => {
+  track.addEventListener('touchend', (e) => {
     if (touchStartX === null) return;
     const delta = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(delta) > 40) {
@@ -101,6 +105,24 @@ if (posterTrack) {
     startAutoAdvance();
   });
 }
+
+// Poster carousel (homepage)
+initCarousel({
+  trackId: 'poster-track',
+  dotsId: 'carousel-dots',
+  prevId: 'carousel-prev',
+  nextId: 'carousel-next',
+  viewportSelector: '.carousel-viewport',
+});
+
+// Headliner reveal carousel (line-up page)
+initCarousel({
+  trackId: 'headliner-track',
+  dotsId: 'headliner-dots',
+  prevId: 'headliner-prev',
+  nextId: 'headliner-next',
+  viewportSelector: '.headliner-viewport',
+});
 
 // Mobile nav toggle
 const navToggle = document.getElementById('nav-toggle');
