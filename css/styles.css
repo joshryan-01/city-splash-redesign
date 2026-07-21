@@ -1682,6 +1682,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   background: var(--cs-black);
   position: relative;
   overflow: hidden;
+  padding-top: clamp(32px, 5vw, 45px);
+  padding-bottom: clamp(24px, 4vw, 40px);
 }
 .page-hero-information .container { position: relative; z-index: 1; }
 .page-hero-information .section-eyebrow { color: var(--cs-yellow); }
