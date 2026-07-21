@@ -911,8 +911,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    same yellow background, so the gap between them doesn't read as an
    empty dead zone. */
 .about-tight-bottom { padding-bottom: clamp(16px, 3vw, 32px); }
+.about-tight-top { padding-top: clamp(16px, 3vw, 32px); }
 .pillars-tight-top { padding-top: clamp(16px, 3vw, 32px); }
 .tickets-tight-top { padding-top: clamp(16px, 3vw, 32px); }
+.community-tight-top { padding-top: clamp(8px, 1.5vw, 16px); }
 
 /* ==========================================================================
    Pillars
