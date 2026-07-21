@@ -1836,7 +1836,11 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 /* Rise Up cohort year groups (compact artist grid) */
 .cohort-year { margin-top: 40px; }
 .cohort-year:first-of-type { margin-top: 32px; }
-.cohort-year h3 { margin-bottom: 18px; }
+.cohort-year h3 {
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
 .artist-mini-grid {
   display: flex;
   flex-wrap: wrap;
