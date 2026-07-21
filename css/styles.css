@@ -1855,13 +1855,26 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   border: 2px solid var(--cs-black);
   margin-bottom: 6px;
 }
+/* Rise Up cohort artwork (card/arch shaped cutouts, sourced with real
+   transparency) already has its own border and rounded corners baked in,
+   so show it uncropped at its native shape instead of forcing it into a
+   circle. */
+.artist-mini-grid--native .artist-mini { width: 92px; }
+.artist-mini-grid--native .artist-mini img {
+  width: 92px;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  border: none;
+}
 .artist-mini-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 92px;
   height: 92px;
-  border-radius: 50%;
+  border-radius: 8px;
   border: 2px dashed var(--cs-black);
   background: var(--cs-white);
   color: var(--cs-charcoal);
