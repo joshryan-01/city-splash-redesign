@@ -1869,12 +1869,17 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 /* 2025 has 6 artists instead of 5 - rather than shrinking them to fit
    one row, force a fixed 3-per-row grid (two rows of 3) at full size,
-   matching how the real site lays this cohort out. */
-.artist-mini-grid--3col {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  justify-content: center;
-  gap: 28px 32px;
+   matching how the real site lays this cohort out. Scoped to wider
+   viewports only: a forced 3-column grid can't shrink columns below
+   each image's own min-width, so on narrow phones it overflowed the
+   viewport horizontally instead of wrapping like the other cohorts do. */
+@media (min-width: 640px) {
+  .artist-mini-grid--3col {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 28px 32px;
+  }
 }
 .artist-mini-grid--native .artist-mini span { font-size: 1.05rem; margin-top: 4px; }
 .artist-mini-placeholder {
