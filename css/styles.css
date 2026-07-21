@@ -1667,33 +1667,6 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   .page-hero-information .hero-decor-lines { width: 64px; }
 }
 
-/* Accessibility: same decorative-sticker theme, own colour (plum).
-   All 4 stickers stay visible against this background. */
-.page-hero-accessibility {
-  background: var(--cs-plum);
-  position: relative;
-  overflow: hidden;
-}
-.page-hero-accessibility .container { position: relative; z-index: 1; }
-.page-hero-accessibility .section-eyebrow { color: var(--cs-yellow); }
-.page-hero-accessibility h1 { color: var(--cs-white); -webkit-text-stroke: 0; }
-.page-hero-accessibility p.lead { color: rgba(255,255,255,0.85); }
-.page-hero-accessibility .hero-decor {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-}
-.page-hero-accessibility .hero-decor-leaf { left: -24px; top: -24px; width: 130px; transform: rotate(20deg); }
-.page-hero-accessibility .hero-decor-circles-green { right: 60px; top: 56px; width: 64px; }
-.page-hero-accessibility .hero-decor-circles-orange { right: -20px; bottom: -8px; width: 110px; }
-.page-hero-accessibility .hero-decor-lines { left: 56px; bottom: -16px; width: 90px; }
-@media (max-width: 640px) {
-  .page-hero-accessibility .hero-decor-leaf { width: 100px; }
-  .page-hero-accessibility .hero-decor-circles-green { width: 46px; top: 24px; }
-  .page-hero-accessibility .hero-decor-circles-orange { width: 80px; bottom: -16px; }
-  .page-hero-accessibility .hero-decor-lines { width: 64px; }
-}
-
 /* Travel & Sustainability: same decorative-sticker theme, own colour (green).
    Uses recoloured mustard-yellow leaf/circles stickers (travel-decor-*) plus
    the standard orange-circles + lines stickers, since the original green
