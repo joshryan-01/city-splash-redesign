@@ -1586,6 +1586,30 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   .page-hero-contact .hero-decor-circles-green { width: 46px; top: 44px; }
 }
 
+/* Merch: same decorative-sticker theme, own colour (orange). Only the
+   leaf and green-circles stickers are used here — the orange circles/lines
+   stickers are near-identical to var(--cs-orange) and would disappear. */
+.page-hero-merch {
+  background: var(--cs-orange);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero-merch .container { position: relative; z-index: 1; }
+.page-hero-merch .section-eyebrow { color: var(--cs-green); }
+.page-hero-merch h1 { color: var(--cs-white); -webkit-text-stroke: 0; }
+.page-hero-merch p.lead { color: var(--cs-black); }
+.page-hero-merch .hero-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero-merch .hero-decor-leaf { left: -24px; top: -24px; width: 130px; transform: rotate(45deg); }
+.page-hero-merch .hero-decor-circles-green { right: 56px; bottom: 32px; width: 72px; }
+@media (max-width: 640px) {
+  .page-hero-merch .hero-decor-leaf { width: 100px; }
+  .page-hero-merch .hero-decor-circles-green { width: 48px; bottom: 16px; right: 24px; }
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
