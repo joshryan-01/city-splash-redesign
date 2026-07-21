@@ -912,6 +912,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    empty dead zone. */
 .about-tight-bottom { padding-bottom: clamp(16px, 3vw, 32px); }
 .pillars-tight-top { padding-top: clamp(16px, 3vw, 32px); }
+.tickets-tight-top { padding-top: clamp(16px, 3vw, 32px); }
 
 /* ==========================================================================
    Pillars
@@ -1060,6 +1061,17 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .ticket-card-featured .btn-outline { color: var(--cs-white); border-color: var(--cs-white); }
 .ticket-note { color: var(--cs-charcoal); font-size: 0.95rem; }
 .ticket-note a { color: var(--cs-pink); font-weight: 600; }
+/* "Resolve Sans" (the site's self-hosted body font) only has a single
+   Light-weight file, so a plain <strong> inside it doesn't actually
+   render bold - browsers don't fake a bold face for a webfont family
+   that already has a registered weight. Force Urbanist here instead,
+   which has a real 700/800 weight, and size it up to stand out more. */
+.ticket-note strong {
+  font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  color: var(--cs-black);
+  font-size: 1.05rem;
+}
 
 /* ==========================================================================
    Travel / Sustainability
@@ -1617,6 +1629,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   background: var(--cs-magenta);
   position: relative;
   overflow: hidden;
+  padding-top: clamp(32px, 5vw, 45px);
+  padding-bottom: clamp(24px, 4vw, 40px);
 }
 .page-hero-contact .container { position: relative; z-index: 1; }
 .page-hero-contact .section-eyebrow { color: var(--cs-yellow); }
