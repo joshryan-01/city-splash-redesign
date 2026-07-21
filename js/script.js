@@ -283,7 +283,7 @@ setInterval(updateCountdown, 1000);
 // Skipped entirely for users who've asked for reduced motion.
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (!prefersReducedMotion) {
+if (!prefersReducedMotion && !document.body.classList.contains('no-reveal')) {
   const revealEls = document.querySelectorAll(
     'section h2, .pillar, .ticket-card, .lineup-tile, .sponsor-card, .cohort-card, .product-card'
   );
