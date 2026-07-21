@@ -1721,6 +1721,35 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   .page-hero-community .hero-decor-lines { width: 64px; }
 }
 
+/* Partners: same decorative-sticker theme, own colour (off white).
+   Dark text throughout since the background is light, unlike every other
+   sticker-hero page so far. All 4 stickers stay visible. */
+.page-hero-partners {
+  background: #E8DEC5;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 -50px 60px -40px rgba(0,0,0,0.25);
+}
+.page-hero-partners .container { position: relative; z-index: 1; }
+.page-hero-partners .section-eyebrow { color: var(--cs-pink); }
+.page-hero-partners h1 { color: var(--cs-black); -webkit-text-stroke: 0; }
+.page-hero-partners p.lead { color: var(--cs-charcoal); }
+.page-hero-partners .hero-decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-hero-partners .hero-decor-leaf { right: -24px; bottom: -24px; width: 130px; transform: rotate(120deg); }
+.page-hero-partners .hero-decor-circles-green { left: 64px; top: 48px; width: 64px; }
+.page-hero-partners .hero-decor-circles-orange { left: -20px; bottom: 8px; width: 100px; }
+.page-hero-partners .hero-decor-lines { right: 56px; top: -16px; width: 90px; }
+@media (max-width: 640px) {
+  .page-hero-partners .hero-decor-leaf { width: 100px; }
+  .page-hero-partners .hero-decor-circles-green { width: 46px; top: 24px; }
+  .page-hero-partners .hero-decor-circles-orange { width: 80px; bottom: -16px; }
+  .page-hero-partners .hero-decor-lines { width: 64px; }
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
