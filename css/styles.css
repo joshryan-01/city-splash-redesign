@@ -23,6 +23,9 @@
      they fail to. */
   --font-display: 'Oswald', 'Bebas Neue', Impact, sans-serif;
   --font-body: 'Resolve Sans', 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Header nav only, to match the rounded sans used on the real site's
+     header - the rest of the site keeps the Oswald display font. */
+  --font-nav: 'Poppins', 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --max-width: 1200px;
   --radius: 14px;
@@ -288,10 +291,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .main-nav > ul > li > a {
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-display);
-  letter-spacing: 1.3px;
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-family: var(--font-nav);
+  letter-spacing: normal;
+  font-weight: 500;
+  font-size: 1.05rem;
   line-height: 1;
   position: relative;
   padding-bottom: 4px;
@@ -320,10 +323,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   -webkit-appearance: none;
   margin: 0;
   cursor: pointer;
-  font-family: var(--font-display);
-  letter-spacing: 1.3px;
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-family: var(--font-nav);
+  letter-spacing: normal;
+  font-weight: 500;
+  font-size: 1.05rem;
   line-height: 1;
   color: inherit;
   padding: 0 0 4px;
@@ -368,10 +371,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
     display: block;
     padding: 10px 12px;
     border-radius: 8px;
-    font-family: var(--font-display);
-    letter-spacing: 1.3px;
-    font-weight: 400;
-    font-size: 1.05rem;
+    font-family: var(--font-nav);
+    letter-spacing: normal;
+    font-weight: 500;
+    font-size: 1rem;
   }
   .dropdown-menu li a:hover { background: rgba(251, 187, 14, 0.14); }
 }
@@ -1440,9 +1443,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
     display: block;
     color: rgba(255,255,255,0.75);
     padding: 12px 0;
-    font-family: var(--font-display);
-    letter-spacing: 1.3px;
-    font-size: 1.1rem;
+    font-family: var(--font-nav);
+    letter-spacing: normal;
+    font-weight: 500;
+    font-size: 1.05rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
@@ -1473,9 +1477,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
     cursor: pointer;
     text-align: left;
     color: var(--cs-yellow);
-    font-family: var(--font-display);
-    letter-spacing: 1.3px;
-    font-size: 1.1rem;
+    font-family: var(--font-nav);
+    letter-spacing: normal;
+    font-weight: 500;
+    font-size: 1.05rem;
     padding: 14px 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
