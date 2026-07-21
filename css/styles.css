@@ -891,6 +891,28 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .about-copy p { color: var(--cs-charcoal); }
 
+/* Rise Up "about" copy: no image, so drop the two-column grid entirely
+   instead of leaving an empty column. The max-width goes on .about-copy,
+   not this element - it doubles as .container, which already centers
+   itself, so constraining its width here would re-center it as a
+   narrow column instead of just capping the text's reading width. */
+.about-grid--full { display: block; }
+.about-grid--full .info-list { margin: 16px 0 20px; }
+@media (min-width: 700px) {
+  .about-grid--full .info-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+  .about-grid--full .info-list li { border-bottom: none; }
+}
+
+/* Trims the section padding where two sections meet back-to-back on the
+   same yellow background, so the gap between them doesn't read as an
+   empty dead zone. */
+.about-tight-bottom { padding-bottom: clamp(16px, 3vw, 32px); }
+.pillars-tight-top { padding-top: clamp(16px, 3vw, 32px); }
+
 /* ==========================================================================
    Pillars
    ========================================================================== */
