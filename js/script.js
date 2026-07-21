@@ -130,11 +130,13 @@ const mainNav = document.getElementById('main-nav');
 const navBackdrop = document.getElementById('nav-backdrop');
 const moreToggle = document.getElementById('more-toggle');
 const moreMenu = document.getElementById('more-menu');
+const moreBack = document.getElementById('more-back');
 
 function closeMoreMenu() {
   if (!moreToggle || !moreMenu) return;
   moreMenu.classList.remove('is-open');
   moreToggle.setAttribute('aria-expanded', 'false');
+  if (mainNav) mainNav.classList.remove('nav-drilldown');
 }
 
 function closeMobileNav() {
@@ -176,7 +178,15 @@ if (moreToggle && moreMenu) {
     e.stopPropagation();
     const isOpen = moreMenu.classList.toggle('is-open');
     moreToggle.setAttribute('aria-expanded', String(isOpen));
+    if (mainNav) mainNav.classList.toggle('nav-drilldown', isOpen);
   });
+
+  if (moreBack) {
+    moreBack.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMoreMenu();
+    });
+  }
 
   // Bug fix: clicking a same-page anchor link (e.g. index.html#gallery while
   // already on index.html) doesn't reload the page, so the menu was never

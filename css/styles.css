@@ -347,6 +347,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   display: none;
 }
 .dropdown-menu.is-open { display: block; }
+.dropdown-menu-back { display: none; }
 
 @media (min-width: 960px) {
   .dropdown-menu {
@@ -1453,6 +1454,40 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
     letter-spacing: 1.3px;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Drill-down: tapping "More" swaps the panel to show only the More
+     items (full-width, same styling as the top-level list) instead of
+     accordion-expanding underneath them, so the whole sub-list fits on
+     screen without forcing a scroll past everything above it first. */
+  .main-nav.nav-drilldown > ul > li:not(.has-dropdown) { display: none; }
+  .main-nav.nav-drilldown .has-dropdown > .dropdown-toggle { display: none; }
+  .main-nav.nav-drilldown .dropdown-menu { padding-left: 0; }
+  .main-nav.nav-drilldown .dropdown-menu.is-open { max-height: none; }
+  .main-nav.nav-drilldown .dropdown-menu li a {
+    color: var(--cs-white);
+    padding: 14px 0;
+  }
+
+  .main-nav .dropdown-menu-back { display: block; }
+  .dropdown-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    background: none;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    cursor: pointer;
+    text-align: left;
+    color: var(--cs-yellow);
+    font-family: var(--font-display);
+    letter-spacing: 1.3px;
+    font-size: 1.1rem;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 }
 
