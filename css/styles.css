@@ -434,6 +434,13 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
      only within this stacking context. */
   isolation: isolate;
 }
+/* On phones, 82svh left the stats row (the "1 Day / 6 Stages" numbers)
+   peeking in at the bottom of the very first screen, cutting into the
+   hero video before anyone had scrolled. Mobile only - desktop/tablet
+   keep the shorter hero. */
+@media (max-width: 640px) {
+  .hero { min-height: 100svh; }
+}
 .hero-bg {
   position: absolute;
   inset: 0;
