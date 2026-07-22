@@ -838,7 +838,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    Headliner reveal carousel (line-up page)
    ========================================================================== */
 .headliner-carousel { padding: 44px 0 52px; text-align: center; }
-.headliner-carousel h2 { margin-bottom: 28px; }
+.headliner-carousel h2 { margin-bottom: 12px; }
+.headliner-intro { margin: 0 auto 28px; }
 .headliner-viewport {
   overflow: hidden;
   width: min(300px, 78vw);
@@ -850,29 +851,21 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .headliner-slide { flex: 0 0 100%; width: 100%; }
 .headliner-card {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
-  border: 2px dashed var(--cs-black);
-  background: var(--cs-white);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  border: 2px solid var(--cs-black);
+  overflow: hidden;
 }
-.headliner-card .headliner-number {
-  font-family: var(--font-display);
-  font-size: 2.75rem;
-  color: var(--cs-pink);
+.headliner-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.headliner-card p {
-  font-family: var(--font-display);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: rgba(34,33,33,0.45);
-  margin: 0;
-  padding: 0 12px;
+.headliner-name {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  text-align: center;
 }
 .headliner-controls {
   display: flex;
@@ -1004,28 +997,43 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .lineup-tile { text-align: center; }
 .lineup-tile-img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
-  border: 2px dashed rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.3);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.lineup-tile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lineup-tile-img--noimg {
+  border-style: dashed;
   background: rgba(255,255,255,0.04);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  padding: 16px;
 }
-.lineup-tile-img span {
+.lineup-tile-img--noimg span {
   font-family: var(--font-display);
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: rgba(255,255,255,0.4);
 }
-.lineup-tile h3 { margin: 0; color: var(--cs-white); }
+.lineup-tile h3 { margin: 0; color: var(--cs-white); font-size: 1rem; }
 
 .lineup-ctas { margin-top: 12px; text-align: center; }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .lineup-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .lineup-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ==========================================================================
@@ -1590,6 +1598,17 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   max-width: 640px;
   font-size: 1.05rem;
   margin: 0;
+}
+/* Resolve Sans (the body font) only ships a Light weight, so a plain
+   <strong> here wouldn't actually render bold - force Urbanist instead,
+   which has a real bold cut. */
+.page-hero p.lead strong {
+  font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  color: var(--cs-white);
+  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+  line-height: 1.25;
+  display: inline-block;
 }
 
 /* Drumsheds: one continuous photo background behind both the title band and
