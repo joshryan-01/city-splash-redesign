@@ -910,7 +910,44 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   border-radius: var(--radius);
   border: 3px solid var(--cs-black);
 }
+/* The CS Week schedule poster is a text-heavy infographic, not a photo -
+   cropping it to the usual 4:3 would cut off event listings, so let it
+   keep its native portrait shape instead. */
+.about-media img.about-media-poster {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  max-height: none;
+  max-width: 380px;
+  margin: 0 auto;
+}
 .about-copy p { color: var(--cs-charcoal); }
+.csweek-intro {
+  max-width: 680px;
+  text-align: center;
+}
+.csweek-intro p {
+  font-weight: 700;
+  color: var(--cs-charcoal);
+  margin: 0 0 12px;
+}
+.csweek-intro .section-eyebrow {
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-text-stroke: 0.4px currentColor;
+  margin-bottom: 10px;
+}
+.csweek-divider {
+  height: 1px;
+  margin: 16px auto;
+  background: rgba(0,0,0,0.15);
+}
+.csweek-disclaimer {
+  max-width: 640px;
+  margin: 20px auto 0;
+  font-size: 0.85rem;
+  color: var(--cs-charcoal);
+}
 
 /* Rise Up "about" copy: no image, so drop the two-column grid entirely
    instead of leaving an empty column. The max-width goes on .about-copy,
