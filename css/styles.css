@@ -1175,8 +1175,8 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .map-key-panel {
   display: flex;
   flex-direction: column;
-  background: var(--cs-white);
-  border: 3px solid var(--cs-black);
+  background: linear-gradient(135deg, var(--cs-magenta) 0%, var(--cs-plum) 100%);
+  border: 3px solid var(--cs-yellow);
   border-radius: var(--radius);
   padding: 20px;
 }
@@ -1185,7 +1185,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   letter-spacing: 1.3px;
   text-transform: uppercase;
   font-size: 0.85rem;
-  color: var(--cs-pink);
+  color: var(--cs-yellow);
   margin: 0 0 16px;
 }
 .map-key-info {
@@ -1200,9 +1200,9 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .map-key-note {
   margin: 18px 0 0;
   padding-top: 16px;
-  border-top: 1px solid rgba(0,0,0,0.12);
+  border-top: 1px solid rgba(255,255,255,0.25);
   font-size: 0.82rem;
-  color: var(--cs-charcoal);
+  color: rgba(255,255,255,0.8);
 }
 .map-key-info li {
   display: flex;
@@ -1214,12 +1214,12 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   font-family: var(--font-display);
   letter-spacing: 1.2px;
   font-size: 1rem;
-  color: var(--cs-black);
+  color: var(--cs-white);
 }
 .map-key-info span {
   display: block;
   font-size: 0.85rem;
-  color: var(--cs-charcoal);
+  color: rgba(255,255,255,0.8);
 }
 .map-key-dot {
   flex-shrink: 0;
