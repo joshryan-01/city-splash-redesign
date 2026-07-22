@@ -649,44 +649,15 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    ========================================================================== */
 .press {
   background: var(--cs-black);
-  padding: 10px 0;
+  padding: 14px 0;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 .press-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   text-align: center;
-}
-.press-quote { margin: 0; max-width: 560px; }
-.press-quote p {
-  font-size: 0.9rem;
-  font-style: italic;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.85);
-  margin: 0 0 4px;
-}
-.press-quote cite {
-  display: block;
-  font-family: var(--font-display);
-  font-style: normal;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  color: var(--cs-yellow);
-}
-.press-divider {
-  width: 36px;
-  height: 1px;
-  background: rgba(255,255,255,0.2);
-}
-.press-outlets {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px 24px;
 }
 .press-label {
   font-family: var(--font-display);
@@ -696,22 +667,78 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   color: rgba(255,255,255,0.45);
   margin: 0;
 }
-.press-list {
+.press-carousel {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 22px;
-  list-style: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.press-carousel-viewport {
+  overflow: hidden;
+  width: min(560px, 90vw);
+}
+.press-carousel-track {
+  display: flex;
+  transition: transform .4s ease;
+}
+.press-carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+}
+.press-quote { margin: 0; max-width: 520px; }
+.press-quote p {
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
   margin: 0;
-  padding: 0;
 }
-.press-list li {
+
+@media (min-width: 900px) {
+  .press-carousel-viewport { width: min(920px, 82vw); }
+  .press-quote { max-width: 800px; }
+  .press-quote p { font-size: 1.05rem; }
+}
+.press-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cs-white);
+  border-radius: 8px;
+  padding: 4px 12px;
+  transition: transform .15s ease;
+}
+.press-logo-link:hover { transform: translateY(-2px); }
+.press-logo-link img {
+  display: block;
+  height: 18px;
+  width: auto;
+  max-width: 90px;
+}
+.press-logo-text {
   font-family: var(--font-display);
-  letter-spacing: 1.3px;
-  font-size: 1rem;
-  color: var(--cs-white);
-  opacity: 0.8;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--cs-black);
 }
+.press-carousel-dots { display: flex; gap: 8px; }
+.press-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.press-carousel-dots button[aria-selected="true"] { background: var(--cs-white); border-color: var(--cs-white); }
 
 /* ==========================================================================
    Poster carousel

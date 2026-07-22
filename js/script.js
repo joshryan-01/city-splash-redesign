@@ -124,6 +124,13 @@ initCarousel({
   viewportSelector: '.headliner-viewport',
 });
 
+// Press quote carousel (homepage)
+initCarousel({
+  trackId: 'press-track',
+  dotsId: 'press-dots',
+  viewportSelector: '.press-carousel-viewport',
+});
+
 // Mobile nav toggle
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
