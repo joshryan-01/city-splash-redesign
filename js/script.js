@@ -34,12 +34,12 @@ function initCarousel({ trackId, dotsId, prevId, nextId, viewportSelector }) {
   if (!track) return;
 
   const slides = Array.from(track.children);
-  const dotsWrap = document.getElementById(dotsId);
+  const dotsWrap = dotsId ? document.getElementById(dotsId) : null;
   const prevBtn = document.getElementById(prevId);
   const nextBtn = document.getElementById(nextId);
   let current = 0;
 
-  const dots = slides.map((_, i) => {
+  const dots = dotsWrap ? slides.map((_, i) => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.setAttribute('role', 'tab');
@@ -47,7 +47,7 @@ function initCarousel({ trackId, dotsId, prevId, nextId, viewportSelector }) {
     dot.addEventListener('click', () => goTo(i));
     dotsWrap.appendChild(dot);
     return dot;
-  });
+  }) : [];
 
   function goTo(index) {
     current = (index + slides.length) % slides.length;
@@ -127,7 +127,8 @@ initCarousel({
 // Press quote carousel (homepage)
 initCarousel({
   trackId: 'press-track',
-  dotsId: 'press-dots',
+  prevId: 'press-prev',
+  nextId: 'press-next',
   viewportSelector: '.press-carousel-viewport',
 });
 

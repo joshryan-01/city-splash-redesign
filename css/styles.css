@@ -655,6 +655,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    Press
    ========================================================================== */
 .press {
+  position: relative;
   background: var(--cs-black);
   padding: 14px 0;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -736,17 +737,38 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   font-size: 0.8rem;
   color: var(--cs-black);
 }
-.press-carousel-dots { display: flex; gap: 8px; }
-.press-carousel-dots button {
-  width: 8px;
-  height: 8px;
+.press-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.4);
+  border: none;
   background: transparent;
-  padding: 0;
+  color: rgba(255,255,255,0.45);
   cursor: pointer;
+  transition: color .15s ease, background .15s ease;
 }
-.press-carousel-dots button[aria-selected="true"] { background: var(--cs-white); border-color: var(--cs-white); }
+.press-arrow svg { width: 16px; height: 16px; display: block; }
+.press-arrow:hover, .press-arrow:focus-visible { color: var(--cs-white); background: rgba(255,255,255,0.08); }
+.press-arrow--prev { left: 6px; }
+.press-arrow--next { right: 6px; }
+
+@media (min-width: 640px) {
+  .press-arrow { width: 36px; height: 36px; }
+  .press-arrow svg { width: 18px; height: 18px; }
+  .press-arrow--prev { left: 16px; }
+  .press-arrow--next { right: 16px; }
+}
+@media (min-width: 900px) {
+  .press-arrow--prev { left: 32px; }
+  .press-arrow--next { right: 32px; }
+}
 
 /* ==========================================================================
    Poster carousel
