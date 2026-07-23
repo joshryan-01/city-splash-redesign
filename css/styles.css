@@ -979,6 +979,35 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   color: var(--cs-charcoal);
 }
 
+/* City Splash Week 2026 recap: one block per day instead of a single
+   dense semicolon-joined sentence, so each event reads as its own line
+   rather than a wall of text. */
+.csweek-schedule { margin-top: 20px; }
+.csweek-day { margin-top: 18px; }
+.csweek-day:first-child { margin-top: 0; }
+.csweek-day-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  color: var(--cs-pink);
+  margin: 0 0 6px;
+}
+.csweek-day-events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.csweek-day-events li {
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  color: var(--cs-charcoal);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+.csweek-day-events li:last-child { border-bottom: none; }
+.csweek-day-events li strong { color: var(--cs-black); }
+
 /* Rise Up "about" copy: no image, so drop the two-column grid entirely
    instead of leaving an empty column. The max-width goes on .about-copy,
    not this element - it doubles as .container, which already centers
