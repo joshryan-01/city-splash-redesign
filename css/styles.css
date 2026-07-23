@@ -933,6 +933,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 }
 .about-media img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   max-height: 420px;
