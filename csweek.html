@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=1784821581">
+<link rel="stylesheet" href="css/styles.css?v=1784822123">
 </head>
 <body>
 
@@ -174,7 +174,18 @@
       <p class="section-eyebrow center">ourppls x City Splash Fund</p>
       <h2>Got an idea for CS Week?</h2>
       <p>We offer four &pound;500 grants each year to emerging event curators producing activities during City Splash Week. City Splash isn't responsible for independently organised partner events, but we love backing new ideas.</p>
-      <a href="contact.html" class="btn btn-outline">Get in touch</a>
+      <form class="newsletter-form" id="newsletter-form">
+        <div class="newsletter-fields">
+          <label class="sr-only" for="nl-first">First name</label>
+          <input type="text" id="nl-first" name="firstName" placeholder="First name" required>
+          <label class="sr-only" for="nl-last">Last name</label>
+          <input type="text" id="nl-last" name="lastName" placeholder="Last name" required>
+          <label class="sr-only" for="nl-email">Email</label>
+          <input type="email" id="nl-email" name="email" placeholder="Email address" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+      <p class="newsletter-status" id="newsletter-status" role="status"></p>
     </div>
   </section>
 
@@ -232,6 +243,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=1784727225"></script>
+<script src="js/script.js?v=1784822123"></script>
 </body>
 </html>
