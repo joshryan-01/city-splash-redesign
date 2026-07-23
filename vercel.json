@@ -1,0 +1,54 @@
+{
+  "redirects": [
+    { "source": "/aboutus", "destination": "/index.html#about", "permanent": true },
+    { "source": "/home-2023", "destination": "/index.html", "permanent": true },
+    { "source": "/home-2024-1", "destination": "/index.html", "permanent": true },
+    { "source": "/home-2025", "destination": "/index.html", "permanent": true },
+    { "source": "/home-2026", "destination": "/index.html", "permanent": true },
+    { "source": "/2022-1", "destination": "/index.html", "permanent": true },
+    { "source": "/2025", "destination": "/index.html", "permanent": true },
+    { "source": "/2027", "destination": "/index.html", "permanent": true },
+    { "source": "/2026survey", "destination": "/index.html", "permanent": true },
+    { "source": "/covid", "destination": "/index.html", "permanent": true },
+    { "source": "/splashed", "destination": "/index.html", "permanent": true },
+    { "source": "/careers", "destination": "/index.html", "permanent": true },
+    { "source": "/be-an-ambassador", "destination": "/index.html", "permanent": true },
+    { "source": "/trader-application", "destination": "/index.html", "permanent": true },
+    { "source": "/pre-sale-sign-up", "destination": "/index.html", "permanent": true },
+    { "source": "/carnivalpresale", "destination": "/index.html", "permanent": true },
+
+    { "source": "/gallery", "destination": "/index.html#gallery", "permanent": true },
+
+    { "source": "/accessibility", "destination": "https://www.brockwell-live.com/access", "permanent": true },
+    { "source": "/accessibility-1", "destination": "https://www.brockwell-live.com/access", "permanent": true },
+    { "source": "/accessibility-3", "destination": "https://www.brockwell-live.com/access", "permanent": true },
+
+    { "source": "/sustainability", "destination": "/travel.html#sustainability", "permanent": true },
+    { "source": "/sustainability-1", "destination": "/travel.html#sustainability", "permanent": true },
+
+    { "source": "/community-1", "destination": "/community.html", "permanent": true },
+    { "source": "/community-1-1", "destination": "/community.html", "permanent": true },
+    { "source": "/community-1-1-1", "destination": "/community.html", "permanent": true },
+    { "source": "/community-1-1-2", "destination": "/community.html", "permanent": true },
+    { "source": "/community-2", "destination": "/community.html", "permanent": true },
+
+    { "source": "/contact", "destination": "/contact.html", "permanent": true },
+    { "source": "/contact-1", "destination": "/contact.html", "permanent": true },
+
+    { "source": "/csweek", "destination": "/csweek.html", "permanent": true },
+    { "source": "/faqs", "destination": "/faqs.html", "permanent": true },
+    { "source": "/partners", "destination": "/partners.html", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html", "permanent": true },
+    { "source": "/riseup", "destination": "/riseup.html", "permanent": true },
+    { "source": "/tcs", "destination": "/tcs.html", "permanent": true },
+    { "source": "/lost-property", "destination": "/faqs.html", "permanent": true },
+
+    { "source": "/lineup", "destination": "/lineup.html", "permanent": true },
+    { "source": "/lineup/:path*", "destination": "/lineup.html", "permanent": true },
+
+    { "source": "/merch", "destination": "/merch.html", "permanent": true },
+    { "source": "/merch/:path*", "destination": "/merch.html", "permanent": true },
+    { "source": "/size-guide-hoodies", "destination": "/merch.html", "permanent": true },
+    { "source": "/size-guide-t-shirts", "destination": "/merch.html", "permanent": true }
+  ]
+}
