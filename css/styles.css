@@ -852,10 +852,10 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
    slider unchanged. transform: none !important overrides the inline
    transform script.js applies for the slide animation. */
 @media (min-width: 900px) {
-  .carousel-viewport { width: min(820px, 90vw); overflow: visible; }
+  .carousel-viewport { width: min(1180px, 92vw); overflow: visible; }
   .carousel-track {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     transform: none !important;
   }
