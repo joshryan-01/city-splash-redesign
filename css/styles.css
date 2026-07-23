@@ -1925,6 +1925,197 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   .page-hero-partners .hero-decor-lines { width: 64px; }
 }
 
+/* Foundation: real community photo, dark gradient overlay for readable text */
+.page-hero-foundation {
+  background-image: linear-gradient(180deg, rgba(20,19,19,0.35), rgba(20,19,19,0.82)), url('../assets/images/gallery-1.webp');
+  background-size: cover;
+  background-position: center 30%;
+  /* Longer lead copy than most page-heroes, so trim the usual top/bottom
+     padding a bit to stop the text (and everything below it) sitting so
+     far down the page */
+  padding: 96px 0 48px;
+}
+.page-hero-foundation .section-eyebrow { color: var(--cs-yellow); }
+
+/* By-the-numbers band: a real culture photo behind the numbers instead of
+   flat black, plus each stat picked out in its own brand colour rather
+   than uniform yellow */
+.foundation-stats {
+  background: linear-gradient(135deg, var(--cs-pink), var(--cs-plum), var(--cs-magenta));
+  padding: clamp(32px, 5vw, 48px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.foundation-stats-decor {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.foundation-stats-decor--circles-green { width: 74px; top: -18px; left: 24px; }
+.foundation-stats-decor--circles-orange { width: 68px; bottom: -16px; right: 32px; }
+.foundation-stats-grid { position: relative; z-index: 1; }
+.foundation-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  text-align: center;
+}
+.foundation-stats-grid .stat-num { color: var(--cs-black); }
+@media (min-width: 640px) {
+  .foundation-stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Charity partners section: same vibrant gradient recipe as the Community
+   page hero, for a bolder colour moment instead of another flat yellow band */
+.foundation-charity-band {
+  background: linear-gradient(135deg, var(--cs-pink), var(--cs-plum), var(--cs-magenta));
+}
+.foundation-charity-band .section-eyebrow { color: var(--cs-yellow); }
+.foundation-charity-band h2 { color: var(--cs-white); }
+
+/* Charity partner cards: capped at 2-up so a short list never leaves an
+   awkward empty third column on wide screens */
+.foundation-charity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 640px) {
+  .foundation-charity-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* Charity cards: soft cream tone (same off-white used on the Partners
+   hero) instead of stark white or black, plus a small brand sticker
+   tucked in the corner for personality */
+.foundation-charity-grid .sponsor-card {
+  background: #E8DEC5;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.sponsor-logo--noimg {
+  width: 100%;
+  height: 90px;
+  border: 2px dashed rgba(34,33,33,0.35);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.sponsor-logo--noimg span {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  color: var(--cs-black);
+  text-align: center;
+}
+
+/* Foundation page: soft cream bordered panel for each programme section,
+   so copy reads as a distinct card on the yellow background instead of
+   text floating loose - lighter than a stark white or black block */
+.foundation-card {
+  background: #E8DEC5;
+  border: none;
+  border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.foundation-card p { color: var(--cs-charcoal); }
+.foundation-card .section-eyebrow { margin-top: 0; color: var(--cs-pink); }
+.foundation-card .about-media { margin-top: 24px; }
+@media (min-width: 900px) {
+  .foundation-card .about-media { margin-top: 0; }
+}
+.foundation-card .btn { margin-top: auto; }
+.foundation-programmes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 900px) {
+  .foundation-programmes { grid-template-columns: 1fr 1fr; }
+}
+/* Colour-coded top accent per card, tying each programme to a brand hue */
+.foundation-card--pink::before, .foundation-card--green::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  z-index: 1;
+}
+.foundation-card--pink::before { background: var(--cs-pink); }
+.foundation-card--green::before { background: var(--cs-green); }
+
+/* Real Rise Up cohort photos, reused from the Rise Up page, to bring some
+   real culture and colour into the card instead of just body copy */
+.foundation-artist-strip-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  color: var(--cs-charcoal);
+  margin: 4px 0 8px;
+}
+.foundation-artist-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.foundation-artist-strip img {
+  width: clamp(56px, 12vw, 76px);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Small brand sticker accents inside each card, reusing the same
+   decorative artwork already used on the page-hero sections elsewhere
+   on the site rather than introducing new artwork */
+.foundation-card-decor, .foundation-charity-grid .sponsor-card > img[aria-hidden] {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.foundation-card > *:not(.foundation-card-decor) {
+  position: relative;
+  z-index: 1;
+}
+.foundation-card-decor--leaf { width: 84px; top: -14px; right: -14px; transform: rotate(20deg); }
+.foundation-card-decor--circles-green { width: 60px; bottom: -10px; right: 18px; }
+.foundation-card-decor--circles-orange { width: 56px; bottom: -12px; right: -8px; }
+
+/* Foundation Stage card: text sits on the left of the real graphic, so
+   tuck stickers around the text side instead of the corners used above */
+.foundation-card-decor--stage-lines { width: 50px; top: 12px; left: -14px; opacity: 0.6; }
+.foundation-card-decor--stage-circles-orange { width: 52px; bottom: -14px; left: 30px; }
+.foundation-card-decor--stage-leaf { width: 46px; top: -12px; left: 100px; transform: rotate(-25deg); }
+
+/* Foundation Stage lineup graphic: exact-ratio crop from the real festival
+   flyer, shown in full (no crop) rather than forced into the standard
+   photo treatment */
+.about-media img.about-media-graphic {
+  height: auto;
+  aspect-ratio: 920 / 1050;
+  object-fit: contain;
+  max-width: 360px;
+  max-height: none;
+  margin: 0 auto;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
 /* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
 .product-grid, .sponsor-grid, .cohort-grid {
   display: grid;
@@ -1968,6 +2159,7 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   margin-bottom: 16px;
   border: none;
 }
+.sponsor-logo--round { width: 90px; }
 .sponsor-card h3 { margin-bottom: 6px; }
 .sponsor-card p { color: var(--cs-charcoal); font-size: 0.9rem; margin: 0; }
 .cohort-card h3 { margin-bottom: 2px; }
