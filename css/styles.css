@@ -2146,40 +2146,33 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
-/* Product / sponsor / cohort card grids (Merch, Partners, Rise Up) */
-.product-grid, .sponsor-grid, .cohort-grid {
+/* Sponsor / cohort card grids (Partners, Rise Up) */
+.sponsor-grid, .cohort-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 32px;
 }
 @media (min-width: 640px) {
-  .product-grid, .sponsor-grid, .cohort-grid { grid-template-columns: repeat(2, 1fr); }
+  .sponsor-grid, .cohort-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 900px) {
-  .product-grid, .sponsor-grid, .cohort-grid { grid-template-columns: repeat(3, 1fr); }
+  .sponsor-grid, .cohort-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.product-card, .sponsor-card, .cohort-card {
+.sponsor-card, .cohort-card {
   border: 2px solid var(--cs-black);
   border-radius: var(--radius);
   padding: 22px;
   background: var(--cs-white);
 }
-.product-card img, .cohort-card img {
+.cohort-card img {
   border-radius: 10px;
   margin-bottom: 14px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 2px solid var(--cs-black);
 }
-.product-price {
-  font-family: var(--font-display);
-  color: var(--cs-pink);
-  font-size: 1.3rem;
-  margin: 6px 0 14px;
-}
-.product-price.sold-out { color: var(--cs-charcoal); }
 .sponsor-card { display: flex; flex-direction: column; align-items: flex-start; }
 .sponsor-logo {
   width: 100%;
@@ -2194,6 +2187,172 @@ section { padding: clamp(48px, 8vw, 96px) 0; }
 .sponsor-card p { color: var(--cs-charcoal); font-size: 0.9rem; margin: 0; }
 .cohort-card h3 { margin-bottom: 2px; }
 .cohort-card p { color: var(--cs-pink); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin: 0; }
+
+/* ==========================================================================
+   Merch shop
+   ========================================================================== */
+.merch-shop { padding-top: 24px; }
+.merch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px 28px;
+  margin-top: 8px;
+}
+@media (min-width: 640px) {
+  .merch-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .merch-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.merch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-align: left;
+}
+.merch-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--cs-white);
+  margin-bottom: 16px;
+}
+.merch-card-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+  transition: opacity 0.35s ease, transform 0.5s ease;
+}
+.merch-img-back { opacity: 0; }
+.merch-card:hover .merch-img-front,
+.merch-card:focus-visible .merch-img-front { opacity: 0; }
+.merch-card:hover .merch-img-back,
+.merch-card:focus-visible .merch-img-back { opacity: 1; }
+.merch-card:hover .merch-card-media img,
+.merch-card:focus-visible .merch-card-media img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  .merch-card-media img { transition: none; transform: none !important; }
+}
+.merch-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: var(--cs-black);
+  color: var(--cs-white);
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.merch-card--soldout .merch-card-media img { opacity: 0.55; }
+.merch-card--soldout:hover .merch-img-front { opacity: 0.55; }
+.merch-card--soldout:hover .merch-img-back { opacity: 0; }
+.merch-card-name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 1rem;
+  color: var(--cs-black);
+}
+.merch-card-price {
+  font-family: var(--font-display);
+  color: var(--cs-pink);
+  font-size: 1rem;
+  margin-top: 4px;
+}
+.merch-card-price--soldout { color: var(--cs-charcoal); opacity: 0.7; }
+
+/* Product quick-view modal */
+.merch-quickview {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.merch-quickview[hidden] { display: none; }
+.merch-quickview-panel {
+  position: relative;
+  background: var(--cs-white);
+  border-radius: var(--radius);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  .merch-quickview-panel { grid-template-columns: 1.1fr 1fr; }
+}
+.merch-quickview-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--cs-cream);
+}
+.merch-quickview-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 32px;
+  display: block;
+}
+.merch-quickview-badge { top: 18px; left: 18px; }
+.merch-quickview-info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.merch-quickview-info h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+.merch-quickview-price {
+  font-family: var(--font-display);
+  color: var(--cs-pink);
+  font-size: 1.3rem;
+  margin: 0 0 20px;
+}
+.merch-quickview-desc {
+  color: var(--cs-charcoal);
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+.merch-quickview-info .btn { align-self: flex-start; margin-top: auto; }
+.merch-quickview-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cs-white);
+  color: var(--cs-black);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
 
 /* Rise Up cohort year groups (compact artist grid) */
 .cohort-year { margin-top: 40px; }

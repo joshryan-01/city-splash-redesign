@@ -367,6 +367,55 @@ if (galleryItems.length && lightbox) {
   });
 }
 
+// Merch quick-view modal
+const merchCards = Array.from(document.querySelectorAll('.merch-card'));
+const merchQuickview = document.getElementById('merch-quickview');
+if (merchCards.length && merchQuickview) {
+  const qvImg = document.getElementById('merch-quickview-img');
+  const qvBadge = document.getElementById('merch-quickview-badge');
+  const qvName = document.getElementById('merch-quickview-name');
+  const qvPrice = document.getElementById('merch-quickview-price');
+  const qvDesc = document.getElementById('merch-quickview-desc');
+  const qvCta = document.getElementById('merch-quickview-cta');
+  const qvClose = document.getElementById('merch-quickview-close');
+  let lastFocused = null;
+
+  function openQuickview(card) {
+    const isSoldOut = card.dataset.soldout === 'true';
+    qvImg.src = card.dataset.img1;
+    qvImg.alt = card.dataset.name;
+    qvBadge.hidden = !isSoldOut;
+    qvName.textContent = card.dataset.name;
+    qvPrice.textContent = isSoldOut ? 'Sold out' : card.dataset.price;
+    qvPrice.classList.toggle('merch-card-price--soldout', isSoldOut);
+    qvDesc.innerHTML = card.dataset.desc;
+    qvCta.textContent = isSoldOut ? 'Notify Me' : 'Shop Now';
+    qvCta.setAttribute('aria-disabled', isSoldOut ? 'true' : 'false');
+
+    lastFocused = document.activeElement;
+    merchQuickview.hidden = false;
+    document.body.style.overflow = 'hidden';
+    qvClose.focus();
+  }
+  function closeQuickview() {
+    merchQuickview.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  merchCards.forEach((card) => {
+    card.addEventListener('click', () => openQuickview(card));
+  });
+  qvClose.addEventListener('click', closeQuickview);
+  merchQuickview.addEventListener('click', (e) => {
+    if (e.target === merchQuickview) closeQuickview();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (merchQuickview.hidden) return;
+    if (e.key === 'Escape') closeQuickview();
+  });
+}
+
 // FAQ accordion
 document.querySelectorAll('.accordion-trigger').forEach((trigger) => {
   const panel = trigger.nextElementSibling;
@@ -385,15 +434,29 @@ document.querySelectorAll('.accordion-trigger').forEach((trigger) => {
   });
 });
 
-// Newsletter form (demo only, no backend wired up)
+// Newsletter form (submits to Basin)
 const newsletterForm = document.getElementById('newsletter-form');
 const newsletterStatus = document.getElementById('newsletter-status');
 
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    newsletterStatus.textContent = "Thanks, you're on the list! (demo form, not yet connected)";
-    newsletterForm.reset();
+    fetch(newsletterForm.action, {
+      method: 'POST',
+      body: new FormData(newsletterForm),
+      headers: { Accept: 'application/json' }
+    })
+      .then((response) => {
+        if (response.ok) {
+          newsletterStatus.textContent = "Thanks, you're on the list!";
+          newsletterForm.reset();
+        } else {
+          newsletterStatus.textContent = 'Something went wrong, please try again.';
+        }
+      })
+      .catch(() => {
+        newsletterStatus.textContent = 'Something went wrong, please try again.';
+      });
   });
 }
 
