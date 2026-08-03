@@ -86,7 +86,8 @@
       <h2>Get first access</h2>
       <p class="section-intro">Register your details and we'll email you as soon as the Drumsheds pre-sale opens, along with festival updates from #TheHomeOfCulture.</p>
 
-      <form class="newsletter-form" id="drumsheds-form" style="margin-top:24px;">
+      <form class="newsletter-form" id="drumsheds-form" action="https://usebasin.com/f/d9326f7f02bf" method="POST" style="margin-top:24px;">
+        <input type="hidden" name="page" value="Drumsheds">
         <p class="form-heading">Name</p>
         <div class="newsletter-fields" style="grid-template-columns:1fr 1fr;">
           <div>
@@ -206,7 +207,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=1785768551"></script>
+<script src="js/script.js?v=1785770536"></script>
 <script>
   const dsForm = document.getElementById('drumsheds-form');
   const dsStatus = document.getElementById('drumsheds-status');
@@ -233,10 +234,24 @@
       // The browser's native constraint validation (required fields) already
       // blocks submission and scrolls/focuses the first invalid field before
       // this handler ever runs, so by this point everything's filled in.
-      dsStatus.textContent = "You're on the list. We'll email you when the pre-sale opens. (demo form)";
-      dsForm.reset();
-      dsConsentCSError.classList.remove('is-visible');
-      dsConsentBroadwickError.classList.remove('is-visible');
+      fetch(dsForm.action, {
+        method: 'POST',
+        body: new FormData(dsForm),
+        headers: { Accept: 'application/json' }
+      })
+        .then((response) => {
+          if (response.ok) {
+            dsStatus.textContent = "You're on the list. We'll email you when the pre-sale opens.";
+            dsForm.reset();
+            dsConsentCSError.classList.remove('is-visible');
+            dsConsentBroadwickError.classList.remove('is-visible');
+          } else {
+            dsStatus.textContent = 'Something went wrong, please try again.';
+          }
+        })
+        .catch(() => {
+          dsStatus.textContent = 'Something went wrong, please try again.';
+        });
     });
   }
 </script>
